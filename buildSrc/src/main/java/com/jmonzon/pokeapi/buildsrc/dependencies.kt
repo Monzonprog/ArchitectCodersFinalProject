@@ -10,8 +10,16 @@ object Libs {
     }
 
     object ManageImages {
-        private const val version = "5.2.0"
-        const val lottie = "com.airbnb.android:lottie:$version"
+        object Lottie {
+            private const val version = "5.2.0"
+            const val lottie = "com.airbnb.android:lottie:$version"
+        }
+
+        object Glide {
+            private const val version = "4.13.1"
+            const val glide = "com.github.bumptech.glide:glide:$version"
+            const val compiler = "com.github.bumptech.glide:compiler:$version"
+        }
     }
 
     object AndroidX {

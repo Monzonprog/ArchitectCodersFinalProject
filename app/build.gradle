@@ -71,5 +71,6 @@ dependencies {
     implementation Libs.AndroidX.Navigation.uiKtx
 
     //Manage Images dependencies
-    implementation Libs.ManageImages.lottie
+    implementation Libs.ManageImages.Lottie.lottie
+    implementation Libs.ManageImages.Glide.glide
 }
