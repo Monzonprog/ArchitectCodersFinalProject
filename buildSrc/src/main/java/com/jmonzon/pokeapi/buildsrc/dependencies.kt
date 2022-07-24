@@ -9,6 +9,11 @@ object Libs {
         const val test = "com.google.dagger:hilt-android-testing:$version"
     }
 
+    object ManageImages {
+        private const val version = "5.2.0"
+        const val lottie = "com.airbnb.android:lottie:$version"
+    }
+
     object AndroidX {
 
         const val coreKtx = "androidx.core:core-ktx:1.7.0"

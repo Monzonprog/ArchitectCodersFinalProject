@@ -55,8 +55,10 @@ dependencies {
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.appCompat
 
+    //Activity dependencies
     implementation Libs.AndroidX.Activity.ktx
 
+    //Lifecycle dependencies
     implementation Libs.AndroidX.Lifecycle.viewmodelKtx
     implementation Libs.AndroidX.Lifecycle.runtimeKtx
 
@@ -67,4 +69,7 @@ dependencies {
     //Navigation components
     implementation Libs.AndroidX.Navigation.fragmentKtx
     implementation Libs.AndroidX.Navigation.uiKtx
+
+    //Manage Images dependencies
+    implementation Libs.ManageImages.lottie
 }
