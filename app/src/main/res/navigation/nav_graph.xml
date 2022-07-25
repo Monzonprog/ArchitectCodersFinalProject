@@ -9,6 +9,20 @@
         android:id="@+id/splashScreen"
         android:name="com.jmonzonm.pokeapi.presentation.splashscreen.SplashScreenFragment"
         android:label="SplashScreenFragment"
-        tools:layout="@layout/fragment_splash_screen" />
+        tools:layout="@layout/fragment_splash_screen">
+
+        <action
+            android:id="@+id/action_from_splashscreen_to_homefragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.jmonzonm.pokeapi.presentation.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
 
 </navigation>

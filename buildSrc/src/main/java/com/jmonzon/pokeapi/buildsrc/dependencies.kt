@@ -39,9 +39,11 @@ object Libs {
         }
 
         object Navigation {
-            private const val version = "2.4.1"
+            private const val version = "2.5.0"
             const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
+            const val featuresFragment =
+                "androidx.navigation:navigation-dynamic-features-fragment:$version"
             const val gradlePlugin =
                 "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }

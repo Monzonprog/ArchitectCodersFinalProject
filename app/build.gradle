@@ -5,6 +5,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -69,8 +70,10 @@ dependencies {
     //Navigation components
     implementation Libs.AndroidX.Navigation.fragmentKtx
     implementation Libs.AndroidX.Navigation.uiKtx
+    implementation Libs.AndroidX.Navigation.featuresFragment
 
     //Manage Images dependencies
     implementation Libs.ManageImages.Lottie.lottie
     implementation Libs.ManageImages.Glide.glide
+    kapt Libs.ManageImages.Glide.compiler
 }
