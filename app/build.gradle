@@ -45,7 +45,7 @@ dependencies {
     implementation project(":data")
     implementation project(":domain")
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -76,4 +76,9 @@ dependencies {
     implementation Libs.ManageImages.Lottie.lottie
     implementation Libs.ManageImages.Glide.glide
     kapt Libs.ManageImages.Glide.compiler
+
+    //Libraries for connections
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.Retrofit.converterGson
+    implementation Libs.OkHttp3.loginInterceptor
 }

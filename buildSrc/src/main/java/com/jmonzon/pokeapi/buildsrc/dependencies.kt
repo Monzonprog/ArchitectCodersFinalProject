@@ -22,6 +22,17 @@ object Libs {
         }
     }
 
+    object Retrofit {
+        private const val version = "2.9.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:$version"
+        const val converterGson = "com.squareup.retrofit2:converter-gson:$version"
+    }
+
+    object OkHttp3 {
+        private const val version = "4.9.3"
+        const val loginInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
+    }
+
     object AndroidX {
 
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
