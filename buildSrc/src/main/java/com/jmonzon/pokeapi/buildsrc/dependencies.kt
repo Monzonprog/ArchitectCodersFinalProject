@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.jmonzon.pokeapi.buildsrc
 
 object Libs {
@@ -73,5 +75,9 @@ object Libs {
             const val gradlePlugin =
                 "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }
+    }
+
+    object JavaX {
+        const val inject = "javax.inject:javax.inject:1"
     }
 }

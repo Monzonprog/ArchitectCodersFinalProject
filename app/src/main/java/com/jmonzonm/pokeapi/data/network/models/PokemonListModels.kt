@@ -1,5 +1,4 @@
-package com.jmonzonm.data.network.models
-
+package com.jmonzonm.pokeapi.data.network.models
 
 import com.google.gson.annotations.SerializedName
 

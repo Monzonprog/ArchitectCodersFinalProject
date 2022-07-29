@@ -1,6 +1,6 @@
-package com.jmonzonm.data.network.services
+package com.jmonzonm.pokeapi.data.network.services
 
-import com.jmonzonm.data.network.models.PokemonListModels
+import com.jmonzonm.pokeapi.data.network.models.PokemonListModels
 import retrofit2.Call
 import retrofit2.http.GET
 
