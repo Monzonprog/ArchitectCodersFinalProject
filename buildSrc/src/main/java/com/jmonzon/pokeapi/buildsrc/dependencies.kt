@@ -33,8 +33,23 @@ object Libs {
         const val loginInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
     }
 
-    object AndroidX {
+    object Arrow {
+        private const val version = "1.0.1"
+        const val core = "io.arrow-kt:arrow-core:$version"
+    }
 
+    object Kotlin {
+        private const val version = "1.6.10"
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
+
+        object Coroutines {
+            private const val version = "1.6.0"
+            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+        }
+    }
+
+    object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
         const val appCompat = "androidx.appcompat:appcompat:1.4.1"
 

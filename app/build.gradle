@@ -55,6 +55,7 @@ dependencies {
 
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.appCompat
+    implementation Libs.Kotlin.Coroutines.core
 
     //Activity dependencies
     implementation Libs.AndroidX.Activity.ktx
@@ -81,4 +82,7 @@ dependencies {
     implementation Libs.Retrofit.retrofit
     implementation Libs.Retrofit.converterGson
     implementation Libs.OkHttp3.loginInterceptor
+
+    //Includes Arrow library for manage responses
+    implementation Libs.Arrow.core
 }
