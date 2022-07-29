@@ -3,6 +3,8 @@ import com.jmonzon.pokeapi.buildsrc.Libs
 buildscript {
     dependencies {
         classpath Libs.AndroidX.Navigation.gradlePlugin
+        classpath Libs.Kotlin.gradlePlugin
+        classpath Libs.Hilt.gradlePlugin
     }
 }
 
