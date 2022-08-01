@@ -1,6 +1,9 @@
 package com.jmonzonm.pokeapi.di
 
+import com.jmonzonm.data.repositoriy.datasource.PokemonRemoteDataSource
+import com.jmonzonm.pokeapi.data.network.datasource.PokemonServerDataSource
 import com.jmonzonm.pokeapi.data.network.services.PokeApiService
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,4 +45,11 @@ object AppModule {
             .build()
             .create()
     }
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class AppDataModule {
+    @Binds
+    abstract fun bindRemoteDataSource(remoteDataSource: PokemonServerDataSource): PokemonRemoteDataSource
 }
