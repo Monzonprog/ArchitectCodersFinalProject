@@ -1,7 +1,6 @@
 package com.jmonzonm.pokeapi.data.network.services
 
 import com.jmonzonm.pokeapi.data.network.models.PokemonListModels
-import retrofit2.Call
 import retrofit2.http.GET
 
 interface PokeApiService {
@@ -11,5 +10,5 @@ interface PokeApiService {
     }
 
     @GET(POKEMONLIST)
-    fun getPokemonList(): Call<PokemonListModels>
+    fun getPokemonList(): PokemonListModels
 }
