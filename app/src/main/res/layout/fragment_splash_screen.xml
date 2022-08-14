@@ -9,22 +9,22 @@
         android:id="@+id/iv_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/title"
+        android:paddingTop="@dimen/margin_padding_size_50dp"
         android:src="@drawable/pokemon_title"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingTop="@dimen/margin_padding_size_big"
-        android:contentDescription="@string/title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_splash"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="false"
+        android:paddingStart="@dimen/margin_padding_size_50dp"
+        android:paddingEnd="@dimen/margin_padding_size_50dp"
         app:layout_constraintTop_toBottomOf="@id/iv_tittle"
-        android:paddingStart="@dimen/margin_padding_size_big"
-        android:paddingEnd="@dimen/margin_padding_size_big"
-        app:lottie_fileName="pokeball-loading-animation.json" />
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="pokeball-loading-animation.json"
+        app:lottie_loop="false" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

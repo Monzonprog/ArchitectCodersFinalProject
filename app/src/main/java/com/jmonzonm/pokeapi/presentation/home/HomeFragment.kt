@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.jmonzonm.pokeapi.data.network.launchAndCollect
 import com.jmonzonm.pokeapi.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,6 +30,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel.init()
+
+
+
+        viewLifecycleOwner.launchAndCollect(homeViewModel.state) {
+            if (it.pokemons?.isNotEmpty() == true) {
+                binding.apply {
+                    recycler.adapter = PokemonAdapter(it.pokemons)
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {

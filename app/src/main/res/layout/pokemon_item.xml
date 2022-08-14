@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/margin_padding_size_5dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_pokemon_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_padding_size_5dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1." />
+
+    <TextView
+        android:id="@+id/tv_pokemon_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_padding_size_5dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_position"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="POKEMON" />
+</androidx.constraintlayout.widget.ConstraintLayout>

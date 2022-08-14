@@ -1,14 +1,14 @@
 package com.jmonzonm.pokeapi.presentation.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import arrow.core.Either
+import com.jmonzonm.domain.models.Failure
 import com.jmonzonm.domain.models.Pokemon
+import com.jmonzonm.pokeapi.data.network.toFailure
 import com.jmonzonm.usecases.GetPokemonList
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,14 +20,15 @@ class HomeViewModel @Inject constructor(private var getPokemonList: GetPokemonLi
 
     fun init() {
         viewModelScope.launch {
-            val pokemon = getPokemonList()
-            Log.d("PokemonList ->", pokemon.toString())
+            getPokemonList()
+                .catch { failure -> _state.update { it.copy(error = failure.toFailure()) } }
+                .collect { pokemons -> _state.update { UiState(pokemons = (pokemons as Either.Right).value) } }
         }
     }
 
     data class UiState(
         val loading: Boolean = false,
         val pokemons: List<Pokemon>? = null,
-        val error: Error? = null
+        val error: Failure? = null
     )
 }

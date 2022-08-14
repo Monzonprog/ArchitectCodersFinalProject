@@ -8,17 +8,27 @@ import com.jmonzonm.domain.models.Pokemon
 import com.jmonzonm.pokeapi.data.network.models.Result
 import com.jmonzonm.pokeapi.data.network.services.PokeApiService
 import com.jmonzonm.pokeapi.data.network.tryCall
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class PokemonServerDataSource @Inject constructor(
     private val remoteService: PokeApiService
 ) : PokemonRemoteDataSource {
-    override suspend fun getPokemonList(): Either<Failure, List<Pokemon>> = tryCall {
+
+
+    override suspend fun pokemonFromNetwork(): Flow<Either<Failure, List<Pokemon>>> = flow {
+        val pokemon = getPokemonList()
+        emit(pokemon)
+    }
+
+    private suspend fun getPokemonList(): Either<Failure, List<Pokemon>> = tryCall {
         remoteService
             .getPokemonList()
             .results
             .toDomainModel()
     }
+
 }
 
 private fun List<Result>.toDomainModel(): List<Pokemon> = map { it.toDomainModel() }
