@@ -6,9 +6,9 @@ import retrofit2.http.GET
 interface PokeApiService {
 
     companion object {
-        const val POKEMONLIST = "/pokemon/?limit=151"
+        const val POKEMONLIST = "pokemon/?limit=151"
     }
 
     @GET(POKEMONLIST)
-    fun getPokemonList(): PokemonListModels
+    suspend fun getPokemonList(): PokemonListModels
 }
