@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor(private var getPokemonList: GetPokemonLi
     private val _state = MutableStateFlow(UiState())
     val state: StateFlow<UiState> = _state.asStateFlow()
 
-    fun init() {
+    init {
         viewModelScope.launch {
             getPokemonList()
                 .catch { failure -> _state.update { it.copy(error = failure.toFailure()) } }

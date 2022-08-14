@@ -20,9 +20,28 @@
     </fragment>
 
     <fragment
+        android:id="@+id/detailScreen"
+        android:name="com.jmonzonm.pokeapi.presentation.detail.DetailFragment"
+        android:label="DetailScreenFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="pokemonID"
+            app:argType="integer" />
+
+    </fragment>
+
+
+    <fragment
         android:id="@+id/homeFragment"
         android:name="com.jmonzonm.pokeapi.presentation.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_from_homefragment_to_detailfragment"
+            app:destination="@+id/detailScreen" />
+
+    </fragment>
 
 </navigation>

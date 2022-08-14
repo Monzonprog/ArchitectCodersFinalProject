@@ -14,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
+    private lateinit var homeState: HomeState
     private var _binding: FragmentHomeBinding? = null
     private val binding
         get() = _binding!!
@@ -29,14 +30,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeViewModel.init()
-
-
+        homeState = buildHomeState()
 
         viewLifecycleOwner.launchAndCollect(homeViewModel.state) {
             if (it.pokemons?.isNotEmpty() == true) {
                 binding.apply {
-                    recycler.adapter = PokemonAdapter(it.pokemons)
+                    recycler.adapter = PokemonAdapter(it.pokemons) { homeState.onPokemonClicked(0) }
                 }
             }
         }
