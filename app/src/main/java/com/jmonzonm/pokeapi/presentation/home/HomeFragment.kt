@@ -15,6 +15,7 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
     private lateinit var homeState: HomeState
+    private var pokemonAdapter: PokemonAdapter? = null
     private var _binding: FragmentHomeBinding? = null
     private val binding
         get() = _binding!!
@@ -31,12 +32,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeState = buildHomeState()
+        pokemonAdapter = PokemonAdapter { homeState.onPokemonClicked(it) }
 
-        viewLifecycleOwner.launchAndCollect(homeViewModel.state) {
+        viewLifecycleOwner.launchAndCollect(homeViewModel.state) { it ->
             if (it.pokemons?.isNotEmpty() == true) {
                 binding.apply {
-                    recycler.adapter = PokemonAdapter(it.pokemons) { homeState.onPokemonClicked(0) }
+                    recycler.adapter = pokemonAdapter
                 }
+                pokemonAdapter?.submitList(it.pokemons)
             }
         }
     }

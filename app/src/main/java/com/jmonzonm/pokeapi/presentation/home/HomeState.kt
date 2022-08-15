@@ -3,12 +3,13 @@ package com.jmonzonm.pokeapi.presentation.home
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.jmonzonm.domain.models.Pokemon
 
 class HomeState(private val navController: NavController) {
-    fun onPokemonClicked(pokemonID: Int) {
+    fun onPokemonClicked(pokemon: Pokemon) {
         navController.navigate(
             HomeFragmentDirections.actionFromHomefragmentToDetailfragment(
-                pokemonID = pokemonID
+                pokemonID = pokemon.position!!
             )
         )
     }

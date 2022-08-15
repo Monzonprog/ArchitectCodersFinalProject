@@ -38,7 +38,7 @@ data class PokemonDetailModels(
     @SerializedName("types")
     val types: List<Type>? = listOf(),
     @SerializedName("weight")
-    val weight: Int? = 0
+    var weight: Int? = 0
 )
 
 data class Yellow(
