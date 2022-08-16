@@ -4,6 +4,7 @@ import android.widget.ImageView
 import coil.ImageLoader
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
+import com.jmonzonm.pokeapi.R
 
 fun ImageView.loadFromUrl(url: String) {
 
@@ -17,6 +18,7 @@ fun ImageView.loadFromUrl(url: String) {
         .crossfade(true)
         .crossfade(500)
         .data(url)
+        .placeholder(R.drawable.pokemon_title)
         .target(this)
         .build()
 

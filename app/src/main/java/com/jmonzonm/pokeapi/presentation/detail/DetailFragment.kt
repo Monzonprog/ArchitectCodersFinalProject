@@ -34,6 +34,7 @@ class DetailFragment : Fragment() {
         viewLifecycleOwner.launchAndCollect(detailViewModel.state) {
             if (it.pokemonDetail !== null) {
                 binding.apply {
+                    tvName.text = "${it.pokemonDetail.id}. ${it.pokemonDetail.name.uppercase()}"
                     ivPokemon.loadFromUrl(it.pokemonDetail.image)
                 }
             }

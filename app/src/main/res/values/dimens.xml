@@ -5,4 +5,5 @@
     <dimen name="margin_padding_size_50dp">50dp</dimen>
     <dimen name="card_corner_radius">25dp</dimen>
     <dimen name="text_size_normal">15sp</dimen>
+    <dimen name="text_size_big">35sp</dimen>
 </resources>

@@ -50,8 +50,20 @@ private fun PokemonDetailModels.toDomainModel(): PokemonDetail =
         moves = this.moves?.toDomainMoveListModel() ?: listOf(),
         type = this.types?.toDomainTypeListModel() ?: listOf(),
         stats = this.stats?.toDomainStatsListModel() ?: listOf(),
-        image = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${this.id}.svg"
+        //image = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${this.id}.svg"
+        image = createUrlImage(this.id.toString())
+
     )
+
+private fun createUrlImage(id: String): String {
+
+    val idForImage = when (id.length) {
+        1 -> "00${id}"
+        2 -> "0${id}"
+        else -> id
+    }
+    return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/${idForImage}.png"
+}
 
 private fun List<Move>.toDomainMoveListModel(): List<String> = map {
     it.move?.name ?: ""
