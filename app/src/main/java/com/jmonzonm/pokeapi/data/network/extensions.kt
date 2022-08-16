@@ -1,5 +1,6 @@
 package com.jmonzonm.pokeapi.data.network
 
+import android.widget.ImageView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -7,6 +8,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import arrow.core.Either
 import arrow.core.left
 import arrow.core.right
+import coil.ImageLoader
+import coil.decode.SvgDecoder
+import coil.request.ImageRequest.Builder
 import com.jmonzonm.domain.models.Failure
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
@@ -36,4 +40,23 @@ fun <T> LifecycleOwner.launchAndCollect(
             flow.collect(body)
         }
     }
+}
+
+
+fun ImageView.loadUrl(url: String) {
+
+    val imageLoader = ImageLoader.Builder(this.context)
+        .components {
+            add(SvgDecoder.Factory())
+        }
+        .build()
+
+    val request = Builder(this.context)
+        .crossfade(true)
+        .crossfade(500)
+        .data(url)
+        .target(this)
+        .build()
+
+    imageLoader.enqueue(request)
 }

@@ -17,10 +17,10 @@ object Libs {
             const val lottie = "com.airbnb.android:lottie:$version"
         }
 
-        object Glide {
-            private const val version = "4.13.1"
-            const val glide = "com.github.bumptech.glide:glide:$version"
-            const val compiler = "com.github.bumptech.glide:compiler:$version"
+        object Coil {
+            private const val version = "2.1.0"
+            const val coil = "io.coil-kt:coil:$version"
+            const val coilSvg = "io.coil-kt:coil-svg:$version"
         }
     }
 

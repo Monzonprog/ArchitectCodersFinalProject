@@ -41,7 +41,7 @@ class PokemonServerDataSource @Inject constructor(
 
 private fun PokemonDetailModels.toDomainModel(): PokemonDetail =
     PokemonDetail(
-        order = this.order ?: 0,
+        id = this.id ?: 0,
         name = this.name ?: "",
         measures = Measures(
             weight = this.weight ?: 0,
@@ -50,7 +50,7 @@ private fun PokemonDetailModels.toDomainModel(): PokemonDetail =
         moves = this.moves?.toDomainMoveListModel() ?: listOf(),
         type = this.types?.toDomainTypeListModel() ?: listOf(),
         stats = this.stats?.toDomainStatsListModel() ?: listOf(),
-        image = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${order}.svg"
+        image = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${this.id}.svg"
     )
 
 private fun List<Move>.toDomainMoveListModel(): List<String> = map {

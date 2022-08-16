@@ -1,7 +1,7 @@
 package com.jmonzonm.domain.models
 
 data class PokemonDetail(
-    val order: Int,
+    val id: Int,
     val name: String,
     val measures: Measures,
     val moves: List<String>,

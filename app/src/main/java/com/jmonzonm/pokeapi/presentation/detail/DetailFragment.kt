@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.jmonzonm.pokeapi.data.network.launchAndCollect
+import com.jmonzonm.pokeapi.data.network.loadUrl
 import com.jmonzonm.pokeapi.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,7 +34,7 @@ class DetailFragment : Fragment() {
         viewLifecycleOwner.launchAndCollect(detailViewModel.state) {
             if (it.pokemonDetail !== null) {
                 binding.apply {
-                    text.text = it.toString()
+                    ivPokemon.loadUrl(it.pokemonDetail.image)
                 }
             }
         }

@@ -76,8 +76,8 @@ dependencies {
 
     //Manage Images dependencies
     implementation Libs.ManageImages.Lottie.lottie
-    implementation Libs.ManageImages.Glide.glide
-    kapt Libs.ManageImages.Glide.compiler
+    implementation Libs.ManageImages.Coil.coil
+    implementation Libs.ManageImages.Coil.coilSvg
 
     //Libraries for connections
     implementation Libs.Retrofit.retrofit
