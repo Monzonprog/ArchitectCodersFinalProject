@@ -3,7 +3,6 @@ package com.jmonzonm.pokeapi.presentation.splashscreen
 import android.animation.Animator
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,9 +37,7 @@ class SplashScreenFragment : Fragment() {
                 }
 
                 override fun onAnimationEnd(animation: Animator?) {
-                    Handler().postDelayed({
-                        navigateToHome()
-                    }, 2000)
+                    navigateToHome()
                 }
 
                 override fun onAnimationCancel(p0: Animator?) {
