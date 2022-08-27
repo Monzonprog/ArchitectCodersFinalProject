@@ -1,5 +1,6 @@
 package com.jmonzonm.pokeapi.presentation.home
 
+import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,10 @@ class HomeState(private val navController: NavController) {
                 pokemonID = pokemon.position!!
             )
         )
+    }
+
+    fun finishApp(activity: Activity) {
+        activity.finish()
     }
 }
 
