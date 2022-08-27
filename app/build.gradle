@@ -86,4 +86,9 @@ dependencies {
 
     //Includes Arrow library for manage responses
     implementation Libs.Arrow.core
+
+    //Room
+    implementation Libs.Room.runtime
+    implementation Libs.Room.ktx
+    kapt Libs.Room.compiler
 }
