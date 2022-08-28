@@ -21,13 +21,11 @@ class PokemonServerDataSource @Inject constructor(
 ) : PokemonRemoteDataSource {
 
 
-    override suspend fun getPokemonList(): Flow<Either<Failure, List<Pokemon>>> = flow {
-        emit(tryCall {
-            remoteService
-                .getPokemonList()
-                .results
-                .toDomainModel()
-        })
+    override suspend fun getPokemonList(): Either<Failure, List<Pokemon>> = tryCall {
+        remoteService
+            .getPokemonList()
+            .results
+            .toDomainModel()
     }
 
     override suspend fun getPokemonDetail(id: String): Flow<Either<Failure, PokemonDetail>> = flow {

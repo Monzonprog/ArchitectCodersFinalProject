@@ -2,7 +2,6 @@ package com.jmonzonm.pokeapi.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import arrow.core.Either
 import com.jmonzonm.domain.models.Failure
 import com.jmonzonm.domain.models.Pokemon
 import com.jmonzonm.pokeapi.data.network.toFailure
@@ -22,7 +21,7 @@ class HomeViewModel @Inject constructor(private var getPokemonList: GetPokemonLi
         viewModelScope.launch {
             getPokemonList()
                 .catch { failure -> _state.update { it.copy(error = failure.toFailure()) } }
-                .collect { pokemons -> _state.update { UiState(pokemons = (pokemons as Either.Right).value) } }
+                .collect { pokemons -> _state.update { UiState(pokemons = pokemons) } }
         }
     }
 

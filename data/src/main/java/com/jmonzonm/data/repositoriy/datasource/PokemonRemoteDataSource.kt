@@ -7,6 +7,6 @@ import com.jmonzonm.domain.models.PokemonDetail
 import kotlinx.coroutines.flow.Flow
 
 interface PokemonRemoteDataSource {
-    suspend fun getPokemonList(): Flow<Either<Failure, List<Pokemon>>>
+    suspend fun getPokemonList(): Either<Failure, List<Pokemon>>
     suspend fun getPokemonDetail(id: String): Flow<Either<Failure, PokemonDetail>>
 }
