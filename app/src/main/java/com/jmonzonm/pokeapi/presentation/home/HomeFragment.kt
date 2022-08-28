@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             homeState.finishApp(requireActivity())
         }
+        homeViewModel.onCreateUi()
     }
 
     override fun onCreateView(

@@ -38,20 +38,27 @@ class DetailFragment : Fragment() {
         detailState = buildDetailState()
 
         viewLifecycleOwner.launchAndCollect(detailViewModel.state) {
+            configureDefaultView()
+
             if (it.pokemonDetail !== null) {
                 binding.apply {
                     tvName.text = "${it.pokemonDetail.id}. ${it.pokemonDetail.name.uppercase()}"
                     ivPokemon.loadFromUrl(it.pokemonDetail.image)
                     typeAdapter = ListAdapter(it.pokemonDetail.type)
                     rvTypes.adapter = typeAdapter
-                    tvTitleMoves.tvTitle.text = getString(R.string.moves)
                     movesAdapter = ListAdapter(it.pokemonDetail.moves.subList(0, 5))
                     rvMoves.adapter = movesAdapter
-                    tvTitleTypes.tvTitle.text = getString(R.string.type)
                     typeAdapter = ListAdapter(it.pokemonDetail.type)
-                    cvGoBack.setOnClickListener { detailState?.goBackClicked() }
                 }
             }
+        }
+    }
+
+    private fun configureDefaultView() {
+        binding.apply {
+            cvGoBack.setOnClickListener { detailState?.goBackClicked() }
+            tvTitleMoves.tvTitle.text = getString(R.string.moves)
+            tvTitleTypes.tvTitle.text = getString(R.string.type)
         }
     }
 

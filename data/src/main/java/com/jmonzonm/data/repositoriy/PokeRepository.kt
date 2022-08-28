@@ -8,7 +8,7 @@ import com.jmonzonm.domain.models.PokemonDetail
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class PokeApiRepository @Inject constructor(
+class PokeRepository @Inject constructor(
     private val localDataSource: PokemonLocalDataSource,
     private val remoteDataSource: PokemonRemoteDataSource
 ) {

@@ -29,17 +29,24 @@ class DetailViewModel @Inject constructor(
                 .catch { failure -> _state.update { it.copy(error = failure.toFailure()) } }
                 .collect { pokemonDetail ->
                     _state.update {
-                        UiState(
-                            pokemonDetail = (pokemonDetail as Either.Right).value
-                        )
+                        when (pokemonDetail) {
+                            is Either.Left -> {
+                                UiState(error = Failure.UnknownFailure("Error"))
+                            }
+                            is Either.Right -> {
+                                UiState(
+                                    pokemonDetail = pokemonDetail.value
+                                )
+                            }
+                        }
                     }
                 }
         }
     }
-
-    data class UiState(
-        val loading: Boolean = false,
-        val pokemonDetail: PokemonDetail? = null,
-        val error: Failure? = null
-    )
 }
+
+data class UiState(
+    val loading: Boolean = false,
+    val pokemonDetail: PokemonDetail? = null,
+    val error: Failure? = null
+)
