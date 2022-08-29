@@ -46,7 +46,6 @@ class DetailViewModel @Inject constructor(
 }
 
 data class UiState(
-    val loading: Boolean = false,
     val pokemonDetail: PokemonDetail? = null,
     val error: Failure? = null
 )

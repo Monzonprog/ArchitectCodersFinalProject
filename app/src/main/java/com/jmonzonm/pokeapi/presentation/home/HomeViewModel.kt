@@ -36,7 +36,6 @@ class HomeViewModel @Inject constructor(
     }
 
     data class UiState(
-        val loading: Boolean = false,
         val pokemons: List<Pokemon>? = null,
         val error: Failure? = null
     )
