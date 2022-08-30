@@ -38,7 +38,7 @@ class HomeViewModelTest {
     private val pokemon = listOf(samplePokemon.copy())
 
     @Before
-    fun setup() {
+    fun init() {
         whenever(getPokemonList()).thenReturn(flowOf(pokemon))
         homeViewModel = HomeViewModel(getPokemonList, requestPokemonList)
     }
