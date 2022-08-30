@@ -25,7 +25,7 @@ class DetailViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            getPokemonDetail(pokemonId.toString())
+            getPokemonDetail(pokemonId)
                 .catch { failure -> _state.update { it.copy(error = failure.toFailure()) } }
                 .collect { pokemonDetail ->
                     _state.update {

@@ -28,7 +28,7 @@ class PokemonServerDataSource @Inject constructor(
             .toDomainModel()
     }
 
-    override suspend fun getPokemonDetail(id: String): Flow<Either<Failure, PokemonDetail>> = flow {
+    override suspend fun getPokemonDetail(id: Int): Flow<Either<Failure, PokemonDetail>> = flow {
         emit(tryCall {
             remoteService
                 .getPokemonDetail(id)

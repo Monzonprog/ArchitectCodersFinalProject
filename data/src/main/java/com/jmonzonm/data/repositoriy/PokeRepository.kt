@@ -29,7 +29,7 @@ class PokeRepository @Inject constructor(
         return null
     }
 
-    suspend fun getPokemonDetail(id: String): Flow<Either<Failure, PokemonDetail>> {
+    suspend fun getPokemonDetail(id: Int): Flow<Either<Failure, PokemonDetail>> {
         return remoteDataSource.getPokemonDetail(id = id)
     }
 }
