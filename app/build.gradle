@@ -91,4 +91,20 @@ dependencies {
     implementation Libs.Room.runtime
     implementation Libs.Room.ktx
     kapt Libs.Room.compiler
+
+    //Test dependencies
+    testImplementation project(":testShared")
+    testImplementation Libs.Test.JUnit.junit
+    testImplementation Libs.Test.Mockito.kotlin
+    testImplementation Libs.Test.Mockito.inline
+    testImplementation Libs.Test.turbine
+    testImplementation Libs.Kotlin.Coroutines.test
+
+    androidTestImplementation Libs.Test.Ext.junit
+    androidTestImplementation Libs.Test.Espresso.contrib
+    androidTestImplementation Libs.Test.runner
+    androidTestImplementation Libs.Test.rules
+    androidTestImplementation Libs.Hilt.test
+    androidTestImplementation Libs.Kotlin.Coroutines.test
+    kaptAndroidTest Libs.Hilt.compiler
 }

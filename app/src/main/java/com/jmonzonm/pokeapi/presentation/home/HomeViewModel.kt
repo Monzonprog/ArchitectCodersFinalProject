@@ -14,8 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getPokemonList: GetPokemonList,
-    requestPokemonList: RequestPokemonList
+    getPokemonList: GetPokemonList,
+    private val requestPokemonList: RequestPokemonList
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(UiState())
@@ -23,15 +23,16 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            requestPokemonList()
-        }
-    }
-
-    fun onCreateUi() {
-        viewModelScope.launch {
             getPokemonList()
                 .catch { failure -> _state.update { it.copy(error = failure.toFailure()) } }
                 .collect { pokemons -> _state.update { UiState(pokemons = pokemons) } }
+        }
+    }
+
+
+    fun onCreateUi() {
+        viewModelScope.launch {
+            requestPokemonList()
         }
     }
 

@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="PokeApi.app" target="11" />
+      <module name="PokeApi.app.testShared" target="11" />
       <module name="PokeApi.buildSrc" target="11" />
       <module name="PokeApi.buildSrc.main" target="11" />
       <module name="PokeApi.buildSrc.test" target="11" />

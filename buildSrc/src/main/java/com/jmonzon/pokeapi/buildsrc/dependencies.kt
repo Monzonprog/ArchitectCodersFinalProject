@@ -87,4 +87,32 @@ object Libs {
         const val ktx = "androidx.room:room-ktx:$version"
         const val compiler = "androidx.room:room-compiler:$version"
     }
+
+    object Test {
+        private const val version = "1.4.0"
+        const val runner = "androidx.test:runner:$version"
+        const val rules = "androidx.test:rules:$version"
+
+        object Ext {
+            private const val version = "1.1.3"
+            const val junit = "androidx.test.ext:junit-ktx:$version"
+        }
+
+        object Espresso {
+            private const val version = "3.4.0"
+            const val contrib = "androidx.test.espresso:espresso-contrib:$version"
+        }
+
+        object JUnit {
+            private const val version = "4.13.2"
+            const val junit = "junit:junit:$version"
+        }
+
+        object Mockito {
+            const val kotlin = "org.mockito.kotlin:mockito-kotlin:4.0.0"
+            const val inline = "org.mockito:mockito-inline:4.4.0"
+        }
+
+        const val turbine = "app.cash.turbine:turbine:0.7.0"
+    }
 }
