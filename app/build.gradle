@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.jmonzonm.pokeapi.di.HiltTestRunner"
     }
 
     buildTypes {
@@ -37,6 +37,12 @@ android {
 
     buildFeatures {
         viewBinding true
+    }
+
+    sourceSets {
+        androidTest {
+            java.srcDirs += "$projectDir/assets"
+        }
     }
 }
 
@@ -106,5 +112,7 @@ dependencies {
     androidTestImplementation Libs.Test.rules
     androidTestImplementation Libs.Hilt.test
     androidTestImplementation Libs.Kotlin.Coroutines.test
+    androidTestImplementation Libs.OkHttp3.mockWebServer
+
     kaptAndroidTest Libs.Hilt.compiler
 }
