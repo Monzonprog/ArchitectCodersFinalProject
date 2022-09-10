@@ -10,7 +10,7 @@ class CustomsDialogs {
     fun showGreetingsDialog(activity: Activity) {
         val dialog = Dialog(activity)
         dialog.setCancelable(false)
-        dialog.setContentView(R.layout.custom_layout)
+        dialog.setContentView(R.layout.dialog_custom)
         val yesBtn = dialog.findViewById(R.id.btOk) as Button
         yesBtn.setOnClickListener {
             dialog.dismiss()
