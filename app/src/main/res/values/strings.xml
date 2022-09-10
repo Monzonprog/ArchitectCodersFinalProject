@@ -5,4 +5,7 @@
     <string name="type">Type</string>
     <string name="name">Name</string>
     <string name="go_back">Go back</string>
+    <string name="architect_coders">Architect Coders</string>
+    <string name="coded_by_jorge">Coded by Jorge Monzón for Architect Coders</string>
+    <string name="ok_button">Ok</string>
 </resources>
