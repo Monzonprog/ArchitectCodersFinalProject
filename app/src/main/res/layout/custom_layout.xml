@@ -22,6 +22,7 @@
         android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
         android:src="@drawable/pokemon_title"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
@@ -41,9 +42,10 @@
     <Button
         android:id="@+id/btOk"
         android:layout_width="wrap_content"
+        app:backgroundTint="@null"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_padding_size_10dp"
-        android:background="@android:color/holo_red_light"
+        android:background="@drawable/button_style"
         android:text="@string/ok_button"
         android:textColor="@android:color/white"
         android:textStyle="bold"
